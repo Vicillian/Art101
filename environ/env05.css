@@ -1,0 +1,25 @@
+
+#pagetitle {
+    font-size: 48px;
+    background-color: #014421;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    position: fixed; /* or absolute */
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}   
+
+main {
+
+      text-align: center;
+
+
+}
+
+#wetButt {
+    background-color: black;
+    color: white;
+}
+
