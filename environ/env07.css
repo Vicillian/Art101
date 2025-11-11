@@ -1,0 +1,36 @@
+
+
+.theBody {
+    background-color: lightblue;
+  }
+
+  #parvenuPeak {
+    width: 10%;
+    border: 5px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+  }
+
+
+
+
+
+
+
+.campfireLit {
+    /*border: 2px solid #14999c; */
+    background-color: #fff;
+    background-image: linear-gradient(#00ced100, #e29300)
+}
+
+
+#campfire {
+    width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
