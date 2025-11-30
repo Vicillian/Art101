@@ -1,25 +1,25 @@
+/*------------------------------------------------------------------*/
+/* env08.css */
 
-
+/* Styles for Vic's Alpine Adventure #8 */
 .theBody {
     background-color: lightblue;
   }
 
 
-
-
 #parvenuPeak {
 /* Adjust the angle as needed */
   transform: rotate(45deg);
+  animation: rotation 3s infinite linear;
   margin-top: 100px;
-  width: 10%;
-  border: 5px solid black;
-  display: block;
   margin-left: auto;
   margin-right: auto;
-  animation: rotation 3s infinite linear;
-
+  display: block;
+  width: 10%;
+  border: 5px solid black;
 }
 
+/* Keyframes for rotation animation so Parvenu Peak can go wild */
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -28,3 +28,6 @@
     transform: rotate(359deg);
   }
 }
+
+
+/*------------------------------------------------------------------*/
