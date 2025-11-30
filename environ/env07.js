@@ -32,3 +32,13 @@ $(".campfireButton").click(function () {
 
 
 });
+
+
+
+$("#nextBtn").hover(function() {
+
+    
+    this.style.backgroundColor = '#99524e'
+    this.style.color = '#fff'
+
+});

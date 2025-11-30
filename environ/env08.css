@@ -1,0 +1,30 @@
+
+
+.theBody {
+    background-color: lightblue;
+  }
+
+
+
+
+#parvenuPeak {
+/* Adjust the angle as needed */
+  transform: rotate(45deg);
+  margin-top: 100px;
+  width: 10%;
+  border: 5px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: rotation 3s infinite linear;
+
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
