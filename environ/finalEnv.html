@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- All techy stuff goes here, inside HEAD -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Overall title of your page -->
+    <title>Final Environment</title>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Vic's Final Alpine Environment</title>
+    <style>
+/* Styles from Vic's Alpine Adventure #8 */
+.theBody {
+    background-color: lightblue;
+  }
+
+
+#parvenuPeak {
+/* Adjust the angle as needed */
+  transform: rotate(45deg);
+  animation: rotation 3s infinite linear;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 10%;
+  border: 5px solid black;
+}
+
+/* Keyframes for rotation animation so Parvenu Peak can go wild */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+    </style>
+</head>
+<body class="theBody">
+    <h1 style="font-family: 'Brush Script MT', cursive;">Vic's Final Alpine Adventure</h1>
+
+      <img style="z-index: 100;" id="parvenuPeak" src="peak01.jpg" alt="A beautiful view of Parvenu Peak. Wow he's so handsome!!" >
+    <div class="finalGoodbyeMessage" style="position: relative; top: 200px; background-color: antiquewhite; padding: 20px; text-align: center; font-family: 'Arial', sans-serif; margin-top: 20px; z-index: 2;">
+        <p>Welp.. Look's like this is our final goodbye!<br> The adventure's over.. <br> It's been a fun time Climber! <br> Until the Next Peak!</b></p>
+        <img onclick="flareClicked()" src="flare.png" alt="A flare?.. Light it up by clicking it." style="width: 100px; height: 100px; margin-top: 10px;">
+        <audio id="flareSound" src="flareSound.m4a"></audio>
+    </div>
+    <div class="sendHomeMessage" style="display: none;position: relative; top: 200px; background-color: antiquewhite; padding: 10px; text-align: center; font-family: 'Arial', sans-serif; margin-top: 20px; z-index: 1;">
+        <p><b>Helicopter arriving to take you back home in: </b>
+            <span id="countdown7" style="font-size: 24px; font-weight: bold;display: none;">7</span>
+            <span id="countdown6" style="font-size: 24px; font-weight: bold;display: none;">6</span>
+            <span id="countdown5" style="font-size: 24px; font-weight: bold;display: none;">5</span>
+            <span id="countdown4" style="font-size: 24px; font-weight: bold;display: none;">4</span>
+            <span id="countdown3" style="font-size: 24px; font-weight: bold;display: none">3</span>
+            <span id="countdown2" style="font-size: 24px; font-weight: bold;display: none">2</span>
+            <span id="countdown1" style="font-size: 24px; font-weight: bold;display: none">1</span>
+            <span id="countdown0" style="font-size: 24px; font-weight: bold;display: none">0</span>
+            seconds
+        
+        </p>
+
+    </div>
+
+</body>
+
+<script>
+
+const countdown7 = document.getElementById("countdown7");
+const countdown6 = document.getElementById("countdown6");
+const countdown5 = document.getElementById("countdown5");
+const countdown4 = document.getElementById("countdown4");
+const countdown3 = document.getElementById("countdown3");
+const countdown2 = document.getElementById("countdown2");
+const countdown1 = document.getElementById("countdown1");
+const countdown0 = document.getElementById("countdown0");
+
+
+
+$(document).mousemove(function(event) {
+  $("#parvenuPeak").css({
+    left: event.pageX - 60,
+    top: event.pageY - 60,
+    position: "absolute"
+  });
+});
+
+
+
+const flarePSHH = document.getElementById("flareSound");
+console.log("Audio element:", flarePSHH);
+
+function playAudio() {
+  flarePSHH.play();
+  flarePSHH.volume = 0.2;
+  console.log("Playing flare sound");
+}
+
+function pauseAudio() {
+  flarePSHH.pause();
+}
+
+var flareLit = false;
+function flareClicked() {
+    if (flareLit === true) return; 
+    flareLit = true;
+    alert("The flare lights up the sky! Goodbye Climber!");
+    playAudio();
+    console.log("Flare clicked");
+    document.querySelector(".finalGoodbyeMessage").style.display = "none";
+    document.querySelector(".sendHomeMessage").style.display = "block";
+    countdown7.style.display = "block";
+    setTimeout(() => {
+        countdown7.style.visibility = "hidden";
+        countdown6.style.display = "block";
+    }, 1000); // 1000 milliseconds = 1 seconds
+    setTimeout(() => {
+        countdown6.style.visibility = "hidden";
+        countdown5.style.display = "block";
+    }, 2000);
+    setTimeout(() => {
+        countdown5.style.visibility = "hidden";
+        countdown4.style.display = "block";
+    }, 3000);
+    setTimeout(() => {
+        countdown4.style.visibility = "hidden";
+        countdown3.style.display = "block";
+    }, 4000);
+    setTimeout(() => {
+        countdown3.style.visibility = "hidden";
+        countdown2.style.display = "block";
+    }, 5000);
+    setTimeout(() => {
+        countdown2.style.visibility = "hidden";
+        countdown1.style.display = "block";
+    }, 6000);
+    setTimeout(() => {
+        countdown1.style.visibility = "hidden";
+        countdown0.style.display = "block";
+    }, 7000);
+    setTimeout(() => {
+        alert("Helicopter has arrived! Time to head home!");
+        window.location.href = "/Art101/index.html"; // Replace with your desired URL
+    }, 8000);
+    
+}
+
+</script>
+
+</html>
